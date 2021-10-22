@@ -15,7 +15,8 @@ SRC		= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 BONUS_S	= ft_lstnew.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 			ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
-OBJ		= $(SRC:.c=.o)
+OBJ_DIR	= ./obj
+OBJ		= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 BONUS_O	= $(BONUS_S:.c=.o)
 
 all: 		$(NAME)
@@ -26,8 +27,8 @@ $(NAME):	$(OBJ)
 bonus:		$(BONUS_O)
 			$(LIB) $(NAME) $(BONUS_O)
 
-.c.o:		$(INCLUDE)
-			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+$(OBJ_DIR)/%.o:	%.c	$(INCLUDE)
+			$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 			$(RM) $(OBJ) $(BONUS_O)

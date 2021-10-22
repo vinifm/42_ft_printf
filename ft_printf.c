@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 11:59:14 by viferrei          #+#    #+#             */
-/*   Updated: 2021/10/22 17:00:28 by viferrei         ###   ########.fr       */
+/*   Created: 2021/10/22 15:48:08 by viferrei          #+#    #+#             */
+/*   Updated: 2021/10/22 19:12:05 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libftprintf.h"
 
-int main(void)
+int	ft_printf(const char *format, ...)
 {
-	int p;
-	int nb;
+	va_list	arg;
+	size_t		len;
 
-	nb = 489;
-	p = printf("hey%q\n", nb);
-	//printf("%d", ft_printf("hey"));
+	va_start(arg, format);
+	len = ft_vprintf(format, arg);
+	va_end(arg);
+	return (len);
+}
 
-	return (0);
+int	ft_vprintf(const char *format, va_list arg)
+{
+	size_t		len;
+	t_format	*fmt;
+
+	fmt = ft_init_format(format, arg);
+	while(fmt->format[fmt->index] != '\0')
+	{
+		if (fmt->format[fmt->index] == '%')
+			ft_placeholder(fmt);
+		fmt->index++;
+	}
+	len = fmt->len;
+	return (len);
 }

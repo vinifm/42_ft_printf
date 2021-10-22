@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_placeholder.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 11:59:14 by viferrei          #+#    #+#             */
-/*   Updated: 2021/10/22 17:00:28 by viferrei         ###   ########.fr       */
+/*   Created: 2021/10/22 18:46:38 by viferrei          #+#    #+#             */
+/*   Updated: 2021/10/22 19:11:33 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libftprintf.h"
 
-int main(void)
+/*
+	FT_PLACEHOLDER
+	Sends the argument to be formatted to the appropriate conversion function.
+
+*/
+
+void ft_placeholder(t_format *fmt)
 {
-	int p;
-	int nb;
+	t_holder	*holder;
 
-	nb = 489;
-	p = printf("hey%q\n", nb);
-	//printf("%d", ft_printf("hey"));
-
-	return (0);
+	fmt->index++;
+	holder = ft_init_holder();
+	if (fmt->format[fmt->index] == 'c')
+		ft_convert_c();
 }
