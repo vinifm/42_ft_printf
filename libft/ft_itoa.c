@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 13:29:52 by viferrei          #+#    #+#             */
-/*   Updated: 2021/09/10 07:42:49 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/03 13:18:43 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 	minus = 0;
 	decimal = count_decimals(n);
 	i_min = 0;
-	if (n == INT_MIN)
+	if (n == -2147483648)
 		i_min = 1;
 	if (n < 0)
 	{
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 		n = -n;
 	}
 	str = (char *) malloc(decimal + 1);
-	if (!str || n > INT_MAX || n < INT_MIN)
+	if (!str || n > 2147483647 || n < -2147483648)
 		return (0);
 	if (i_min)
 		return (writemin(str));
