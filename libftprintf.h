@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:40:36 by viferrei          #+#    #+#             */
-/*   Updated: 2021/10/22 19:08:10 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/03 14:50:48 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,18 @@
 #include <stdarg.h>
 #include "./libft/libft.h"
 
+/*
+EXCLUIR DEPOIS
+*/
+#include <stdio.h>
+#include <wchar.h>
+
 typedef struct	s_format
 {
 	char	*format;
 	int		index;
 	va_list	arg;
-	size_t	len;
+	int		len;
 }	t_format;
 
 typedef struct	s_holder
@@ -36,6 +42,12 @@ int			ft_vprintf(const char *format, va_list arg);
 
 t_format	*ft_init_format(const char *format, va_list arg);
 t_holder	*ft_init_holder(void);
-void		ft_placeholder(t_format *fmt);
+
+void		ft_placeholder(t_format *fmt, t_holder *holder);
+void		ft_specifier(t_format *fmt, t_holder *holder);
+void		ft_conversions(t_format *fmt, t_holder *holder);
+
+/* CONVERSIONS */
+void		ft_convert_c(t_format *fmt, t_holder *holder);
 
 #endif

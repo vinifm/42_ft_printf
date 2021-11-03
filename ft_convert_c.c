@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_convert_c.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 11:59:14 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/03 14:44:46 by viferrei         ###   ########.fr       */
+/*   Created: 2021/11/03 13:34:49 by viferrei          #+#    #+#             */
+/*   Updated: 2021/11/03 14:55:07 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libftprintf.h"
 
-int main(void)
+void	ft_convert_c(t_format *fmt, t_holder *holder)
 {
-	char	ch;
-	char	cha;
-	int		p;
-	int		nb;
+	char	c;
 
-	ch = 'y';
-	cha = 'o';
-	nb = 489;
-	p = ft_printf("he%c\n", ch);
-	printf("%d", p);
-
-	return (0);
+	c = (int)va_arg(fmt->arg, int);
+	holder->argument = malloc(sizeof(char));
+	if (!holder->argument)
+		return ;
+	holder->argument[0] = c;
+	holder->len++;
 }
