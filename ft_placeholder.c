@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 18:46:38 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/03 15:01:36 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/04 11:04:15 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	Checks if the type passed to "%" is a valid type specifier and saves it to
 	holder->specifier.
 
-	FT_PLACEHOLDER
+	FT_CONVERSIONS
 	Sends the argument to be formatted to the appropriate conversion function.
 
 */
@@ -47,4 +47,8 @@ void	ft_conversions(t_format *fmt, t_holder *holder)
 {
 	if (holder->specifier == 'c')
 		ft_convert_c(fmt, holder);
+	if (holder->specifier == 'd' || holder->specifier == 'i')
+		ft_convert_di(fmt, holder);
+	if (holder->specifier == 'u')
+		ft_convert_u(fmt, holder);
 }
