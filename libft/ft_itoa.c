@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 13:29:52 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/03 13:18:43 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/04 10:59:28 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 		n = -n;
 	}
 	str = (char *) malloc(decimal + 1);
-	if (!str || n > 2147483647 || n < -2147483648)
+	if (!str || n > INT_MAX || n < INT_MIN)
 		return (0);
 	if (i_min)
 		return (writemin(str));

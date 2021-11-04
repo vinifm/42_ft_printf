@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 16:49:02 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/03 13:02:45 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/04 10:58:42 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
+# define UINT_MAX 4294967295
 
 typedef struct s_list
 {
