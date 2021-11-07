@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 18:46:38 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/07 13:17:36 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:05:38 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ void	ft_conversions(t_format *fmt, t_holder *holder)
 		ft_convert_percent(holder);
 	if (holder->specifier == 'p')
 		ft_convert_p(fmt, holder);
-	if (holder->specifier == 'x')
+	if (holder->specifier == 'x' || holder->specifier == 'X')
 		ft_convert_x(fmt, holder);
 }

@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:40:36 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/07 13:19:07 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/07 14:48:47 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ EXCLUIR DEPOIS
 */
 #include <stdio.h>
 #include <wchar.h>
+
+# define HEX_L_BASE "0123456789abcdef"
 
 typedef struct	s_format
 {
@@ -58,5 +60,6 @@ void		ft_convert_x(t_format *fmt, t_holder *holder);
 
 /* AUXILIARIES */
 char		*ft_uitoa(unsigned int n);
+char		*ft_itoa_base(unsigned long nbr, char *base);
 
 #endif
