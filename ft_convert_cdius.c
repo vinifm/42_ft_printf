@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_c.c                                     :+:      :+:    :+:   */
+/*   ft_convert_cdius.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:34:49 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/04 11:14:55 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/05 16:44:38 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,22 @@ void	ft_convert_u(t_format *fmt, t_holder *holder)
 	char			*str;
 	size_t			s_len;
 
-	u = (int)va_arg(fmt->arg, unsigned int);
+	u = (unsigned int)va_arg(fmt->arg, unsigned int);
 	str = ft_uitoa(u);
+	s_len = ft_strlen(str);
+	holder->argument = malloc(s_len);
+	if(!holder->argument)
+		return ;
+	holder->argument = str;
+	holder->len = s_len;
+}
+
+void	ft_convert_s(t_format *fmt, t_holder *holder)
+{
+	char	*str;
+	size_t	s_len;
+
+	str = ft_strdup(va_arg(fmt->arg, char *));
 	s_len = ft_strlen(str);
 	holder->argument = malloc(s_len);
 	if(!holder->argument)

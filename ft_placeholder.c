@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 18:46:38 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/04 11:04:15 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/07 13:17:36 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 	FT_CONVERSIONS
 	Sends the argument to be formatted to the appropriate conversion function.
 
+	FT_PLACEHOLDER
+	Prints the converted argument string.
 */
 
 void ft_placeholder(t_format *fmt, t_holder *holder)
@@ -51,4 +53,12 @@ void	ft_conversions(t_format *fmt, t_holder *holder)
 		ft_convert_di(fmt, holder);
 	if (holder->specifier == 'u')
 		ft_convert_u(fmt, holder);
+	if (holder->specifier == 's')
+		ft_convert_s(fmt, holder);
+	if (holder->specifier == '%')
+		ft_convert_percent(holder);
+	if (holder->specifier == 'p')
+		ft_convert_p(fmt, holder);
+	if (holder->specifier == 'x')
+		ft_convert_x(fmt, holder);
 }

@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_convert_xX.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 11:59:14 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/07 13:34:29 by viferrei         ###   ########.fr       */
+/*   Created: 2021/11/07 13:17:46 by viferrei          #+#    #+#             */
+/*   Updated: 2021/11/07 13:34:31 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libftprintf.h"
 
-int main(void)
+void	ft_convert_x(t_format *fmt, t_holder *holder)
 {
-	char	ch, ch1, ch2;
-	int		p;
-	int		nb;
-	int		*ptr;
 
-	ch = 'y';
-	ch1 = 'o';
-	ch2 = 'u';
-	nb = 0x613A;
-	ptr = &nb;
-	p = printf("%d", nb);
-	printf("\n%d", p);
-
-	return (0);
 }
 
-/*
+static void	ft_putnbr_base(int nbr, char *base)
+{
+	int		b;
+	int		i;
+	int		mod;
+	char	res[13];
 
-0 - 7 x	8^0 = 1		4x1 =  4
-		8^1 = 8		2x8 = 16
-		8^2 = 64		  20
-*/
+	b = ft_strlen(base);
+	i = 0;
+	if (ft_strlen(base) && ft_strcmp(base))
+	{
+		nbr = ft_ifneg(nbr);
+		while (nbr != 0)
+		{
+			mod = nbr % b;
+			nbr = nbr / b;
+			res[i] = base[mod];
+			i++;
+		}
+		res[i] = '\0';
+		ft_revputstr(res);
+	}
+}

@@ -6,40 +6,34 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 13:29:52 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/04 11:12:22 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/05 16:01:17 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static char	*writestr(char *str, int decimal, int n);
+static char	*writestr(char *str, int decimal, unsigned int n);
 
-static int	count_decimals(int n)
+static int	count_decimals(unsigned int n)
 {
 	int	count;
-	int	minus;
 
 	count = 0;
-	minus = 0;
 	if (n == 0)
 		return (1);
-	if (n < 0)
-	{
-		minus = 1;
-		n = -n;
-	}
 	while (n)
 	{
 		n = n / 10;
 		count++;
 	}
-	return (count + minus);
+	return (count);
 }
 
 char	*ft_uitoa(unsigned int n)
 {
 	int		decimal;
 	char	*str;
+
 
 	decimal = count_decimals(n);
 	str = (char *) malloc(decimal + 1);
@@ -48,7 +42,7 @@ char	*ft_uitoa(unsigned int n)
 	return (writestr(str, decimal, n));
 }
 
-static char	*writestr(char *str, int decimal, int n)
+static char	*writestr(char *str, int decimal, unsigned int n)
 {
 	str[decimal--] = '\0';
 	while (decimal)
