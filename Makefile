@@ -18,11 +18,8 @@ OBJ			= $(addprefix $(OBJ_DIR)/, $(OBJS))
 
 all: $(NAME)
 
-$(NAME): $(OBJ_DIR) $(OBJ) $(LIBFT)
+$(NAME): $(OBJ) $(LIBFT)
 	$(LIB) $(NAME) $(OBJ)
-
-$(OBJ_DIR):
-	mkdir obj
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
