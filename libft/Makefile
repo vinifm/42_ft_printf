@@ -21,8 +21,11 @@ BONUS_O	= $(BONUS_S:.c=.o)
 
 all: 		$(NAME)
 
-$(NAME):	$(OBJ)
+$(NAME):	$(OBJ_DIR) $(OBJ)
 			$(LIB) $(NAME) $(OBJ)
+
+$(OBJ_DIR):
+	mkdir obj
 
 bonus:		$(BONUS_O)
 			$(LIB) $(NAME) $(BONUS_O)
