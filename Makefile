@@ -27,7 +27,7 @@ $(OBJ_DIR):
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
-# libft: $(LIBFT)
+libft: $(LIBFT)
 
 $(OBJ_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
