@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:34:49 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 16:44:49 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 17:32:02 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_convert_di(t_format *fmt, t_holder *holder)
 		return ;
 	holder->argument = str;
 	holder->len = s_len;
+	free(str);
 }
 
 void	ft_convert_u(t_format *fmt, t_holder *holder)
@@ -54,6 +55,7 @@ void	ft_convert_u(t_format *fmt, t_holder *holder)
 		return ;
 	holder->argument = str;
 	holder->len = s_len;
+	free(str);
 }
 
 void	ft_convert_s(t_format *fmt, t_holder *holder)
@@ -68,4 +70,5 @@ void	ft_convert_s(t_format *fmt, t_holder *holder)
 		return ;
 	holder->argument = str;
 	holder->len = s_len;
+	free(str);
 }
