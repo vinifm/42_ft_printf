@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:34:49 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 19:41:55 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 19:52:04 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,8 @@ void	ft_convert_u(t_format *fmt, t_holder *holder)
 
 void	ft_convert_s(t_format *fmt, t_holder *holder)
 {
-	char	*str;
-	size_t	s_len;
-
-	str = ft_strdup(va_arg(fmt->arg, char *));
-	if (!str)
-		str = ft_strdup("(null)");
-	s_len = ft_strlen(str);
-	holder->argument = malloc(s_len);
-	if(!holder->argument)
-		return ;
-	holder->argument = str;
-	holder->len = s_len;
-	free(str);
+	holder->argument = ft_strdup(va_arg(fmt->arg, char *));
+	if (!holder->argument)
+		holder->argument = ft_strdup("(null)");
+	holder->len = ft_strlen(holder->argument);
 }
