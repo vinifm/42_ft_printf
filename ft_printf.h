@@ -6,23 +6,23 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:40:36 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 16:44:12 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 20:44:55 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include "./libft/libft.h"
+# include <stdarg.h>
+# include "./libft/libft.h"
 
 /*
 EXCLUIR DEPOIS
 */
-#include <stdio.h>
-#include <wchar.h>
+# include <stdio.h>
+# include <wchar.h>
 
-typedef struct	s_format
+typedef struct s_format
 {
 	char	*format;
 	int		index;
@@ -30,7 +30,7 @@ typedef struct	s_format
 	int		len;
 }	t_format;
 
-typedef struct	s_holder
+typedef struct s_holder
 {
 	char	*argument;
 	char	specifier;

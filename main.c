@@ -6,24 +6,24 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:59:14 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 16:12:28 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 20:43:06 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int main(void)
+int	main(void)
 {
-	char	ch, ch1, ch2;
+	char	ch;
 	int		p;
 	int		nb;
+	char	*str;
 
 	ch = 'y';
-	ch1 = 'o';
-	ch2 = 'u';
 	nb = 0xf;
-	p = printf("%p", &nb);
+	str = "hey";
+	p = ft_printf("%s", str);
 	printf("\n%d", p);
 	return (0);
 }

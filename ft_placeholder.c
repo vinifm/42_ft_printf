@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 18:46:38 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 16:45:30 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 20:42:17 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 	Prints the converted argument string.
 */
 
-void ft_placeholder(t_format *fmt, t_holder *holder)
+void	ft_placeholder(t_format *fmt, t_holder *holder)
 {
 	fmt->index++;
 	ft_specifier(fmt, holder);

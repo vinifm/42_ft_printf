@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 15:48:08 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 16:45:35 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 20:42:30 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_vprintf(const char *format, va_list arg)
 
 	fmt = ft_init_format(format, arg);
 	holder = ft_init_holder();
-	while(fmt->format[fmt->index] != '\0')
+	while (fmt->format[fmt->index] != '\0')
 	{
 		if (fmt->format[fmt->index] == '%')
 			ft_placeholder(fmt, holder);
