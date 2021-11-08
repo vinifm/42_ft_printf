@@ -26,6 +26,7 @@ $(OBJ_DIR):
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
+	cp $(LIBFT) $(NAME)
 
 libft: $(LIBFT)
 
