@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:34:49 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 17:32:02 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 19:41:55 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,35 +27,19 @@ void	ft_convert_c(t_format *fmt, t_holder *holder)
 void	ft_convert_di(t_format *fmt, t_holder *holder)
 {
 	int		d;
-	char	*str;
-	size_t	s_len;
 
 	d = (int)va_arg(fmt->arg, int);
-	str = ft_itoa(d);
-	s_len = ft_strlen(str);
-	holder->argument = malloc(s_len);
-	if (!holder->argument)
-		return ;
-	holder->argument = str;
-	holder->len = s_len;
-	free(str);
+	holder->argument = ft_itoa(d);
+	holder->len = ft_strlen(holder->argument);
 }
 
 void	ft_convert_u(t_format *fmt, t_holder *holder)
 {
 	unsigned int	u;
-	char			*str;
-	size_t			s_len;
 
 	u = (unsigned int)va_arg(fmt->arg, unsigned int);
-	str = ft_uitoa(u);
-	s_len = ft_strlen(str);
-	holder->argument = malloc(s_len);
-	if(!holder->argument)
-		return ;
-	holder->argument = str;
-	holder->len = s_len;
-	free(str);
+	holder->argument = ft_uitoa(u);
+	holder->len = ft_strlen(holder->argument);
 }
 
 void	ft_convert_s(t_format *fmt, t_holder *holder)
@@ -64,6 +48,8 @@ void	ft_convert_s(t_format *fmt, t_holder *holder)
 	size_t	s_len;
 
 	str = ft_strdup(va_arg(fmt->arg, char *));
+	if (!str)
+		str = ft_strdup("(null)");
 	s_len = ft_strlen(str);
 	holder->argument = malloc(s_len);
 	if(!holder->argument)

@@ -45,7 +45,7 @@ re: fclean all
 
 run:
 	make
-	rm -f a.out && $(CC) $(CFLAGS) main.c libftprintf.a $(LIBFT) && ./a.out
+	rm -f a.out && $(CC) $(CFLAGS) main.c libftprintf.a && ./a.out
 
 fsan:
 	make
