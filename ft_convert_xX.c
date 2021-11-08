@@ -6,11 +6,11 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 13:17:46 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/07 15:29:34 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 16:45:11 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static size_t	ft_nbrlen(unsigned long nbr);
 static void		ft_revstring(char *str);

@@ -6,11 +6,11 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 13:29:52 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/05 16:01:17 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/08 16:45:45 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static char	*writestr(char *str, int decimal, unsigned int n);
 
