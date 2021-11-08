@@ -22,8 +22,6 @@ EXCLUIR DEPOIS
 #include <stdio.h>
 #include <wchar.h>
 
-# define HEX_L_BASE "0123456789abcdef"
-
 typedef struct	s_format
 {
 	char	*format;
