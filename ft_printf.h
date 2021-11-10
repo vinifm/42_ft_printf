@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:40:36 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 20:44:55 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:36:46 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,6 @@
 
 # include <stdarg.h>
 # include "./libft/libft.h"
-
-/*
-EXCLUIR DEPOIS
-*/
-# include <stdio.h>
-# include <wchar.h>
 
 typedef struct s_format
 {
