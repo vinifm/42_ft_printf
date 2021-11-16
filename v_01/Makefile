@@ -1,7 +1,7 @@
 NAME		= libftprintf.a
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-RM			= rm -r
+RM			= /bin/rm -f
 LIB			= ar -rcs
 
 LIBFT_DIR	= ./libft
@@ -12,41 +12,39 @@ INCLUDE		= -I$(LIBFT_DIR)
 SRC			= ft_convert_cdius.c ft_convert_p.c ft_convert_percent.c \
 				ft_convert_xX.c ft_init.c ft_placeholder.c ft_printf.c \
 				ft_uitoa.c
-OBJ_DIR		= ./obj
-OBJS		= $(SRC:.c=.o)
-OBJ			= $(addprefix $(OBJ_DIR)/, $(OBJS))
+OBJ			= $(SRC:.c=.o)
 
-all: $(NAME)
+all: 		$(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(LIB) $(NAME) $(OBJ)
+$(NAME):	$(OBJ) $(LIBFT)
+				$(LIB) $(NAME) $(OBJ)
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
-	cp $(LIBFT) $(NAME)
+				make -C $(LIBFT_DIR)
+				cp $(LIBFT) $(NAME)
 
-libft: $(LIBFT)
+libft:		$(LIBFT)
 
-$(OBJ_DIR)/%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+.c.o:
+				$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:.c=.o)
 
 clean:
-	make clean -C $(LIBFT_DIR)
-	$(RM) $(OBJ)
+				make clean -C $(LIBFT_DIR)
+				$(RM) $(OBJ)
 
-fclean:	clean
-	make fclean -C $(LIBFT_DIR)
-	$(RM) $(NAME)
+fclean:		clean
+				make fclean -C $(LIBFT_DIR)
+				$(RM) $(NAME)
 
-re: fclean all
+re: 		fclean all
 
 run:
-	make
-	rm -f a.out && $(CC) $(CFLAGS) main.c libftprintf.a && ./a.out
+				make
+				rm -f a.out && $(CC) $(CFLAGS) main.c libftprintf.a && ./a.out
 
 fsan:
-	make
-	rm -f a.out && $(CC) $(CFLAGS) -g -fsanitize=address main.c libftprintf.a \
-	$(LIBFT) && ./a.out
+				make
+				rm -f a.out && $(CC) $(CFLAGS) -g -fsanitize=address main.c \
+				libftprintf.a $(LIBFT) && ./a.out
 
-.PHONY: all clean fclean re run fsan
+.PHONY: 	all clean fclean re run fsan

@@ -8,19 +8,15 @@ NAME	= libft.a
 INCLUDE	= libft.h
 SRC		= ft_itoa.c ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c \
 			ft_strlcpy.c ft_strlen.c
-OBJ_DIR	= ./obj
-OBJ		= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
+OBJ		= $(SRC:.c=.o)
 
 all: 		$(NAME)
 
-$(NAME):	$(OBJ_DIR) $(OBJ)
+$(NAME):	$(OBJ)
 			$(LIB) $(NAME) $(OBJ)
 
-$(OBJ_DIR):
-	mkdir obj
-
-$(OBJ_DIR)/%.o:	%.c	$(INCLUDE)
-			$(CC) $(CFLAGS) -c $< -o $@
+.c.o:		$(INCLUDE)
+			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 clean:
 			$(RM) $(OBJ) $(BONUS_O)
