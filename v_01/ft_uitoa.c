@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 13:29:52 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 20:45:53 by viferrei         ###   ########.fr       */
+/*   Updated: 2021/11/16 22:01:41 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_uitoa(unsigned int n)
 
 	decimal = count_decimals(n);
 	str = (char *) malloc(decimal + 1);
-	if (!str || n > UINT_MAX || n < 0)
+	if (!str || n > UINT_MAX)
 		return (0);
 	return (writestr(str, decimal, n));
 }
