@@ -1,7 +1,7 @@
 NAME		= libftprintf.a
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-RM			= rm -r
+RM			= rm -f
 LIB			= ar -rcs
 
 LIBFT_DIR	= ./libft
