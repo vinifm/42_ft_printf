@@ -9,9 +9,11 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 
 INCLUDE		= -I$(LIBFT_DIR)
 
-SRC			= ft_convert_cdius.c ft_convert_p.c ft_convert_percent.c \
-				ft_convert_xX.c ft_init.c ft_placeholder.c ft_printf.c \
-				ft_uitoa.c
+SRC			= ft_convert_cdiusp.c \
+				ft_convert_xX_percent.c \
+				ft_init_placeholder.c \
+				ft_printf.c \
+				#ft_uitoa.c
 OBJ_DIR		= ./objs
 OBJS		= $(SRC:.c=.o)
 OBJ			= $(addprefix $(OBJ_DIR)/, $(OBJS))

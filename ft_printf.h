@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 14:40:36 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/10 19:36:46 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/01/29 17:20:11 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void		ft_convert_p(t_format *fmt, t_holder *holder);
 void		ft_convert_x(t_format *fmt, t_holder *holder);
 
 /* AUXILIARIES */
-char		*ft_uitoa(unsigned int n);
 char		*ft_itoa_base(unsigned long nbr, char *base);
 
 #endif

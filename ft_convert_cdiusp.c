@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_cdius.c                                 :+:      :+:    :+:   */
+/*   ft_convert_dciusp.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:34:49 by viferrei          #+#    #+#             */
-/*   Updated: 2021/11/08 20:27:32 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/01/29 17:13:00 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,16 @@ void	ft_convert_s(t_format *fmt, t_holder *holder)
 	if (!holder->argument)
 		holder->argument = ft_strdup("(null)");
 	holder->len = ft_strlen(holder->argument);
+}
+
+void	ft_convert_p(t_format *fmt, t_holder *holder)
+{
+	void	*ptr;
+	char	*str;
+
+	ptr = (void *)va_arg(fmt->arg, void *);
+	str = ft_itoa_base((unsigned long) ptr, "0123456789abcdef");
+	holder->argument = ft_strjoin("0x", str);
+	holder->len = ft_strlen(holder->argument);
+	free (str);
 }

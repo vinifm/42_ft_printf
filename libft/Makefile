@@ -7,7 +7,8 @@ NAME	= libft.a
 
 INCLUDE	= libft.h
 SRC		= ft_itoa.c ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c \
-			ft_strlcpy.c ft_strlen.c
+			ft_strlcpy.c ft_strlen.c \
+			ft_uitoa.c
 OBJ_DIR	= ./objs
 OBJ		= $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
