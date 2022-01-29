@@ -1,7 +1,7 @@
 NAME		= libftprintf.a
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-RM			= rm -f
+RM			= rm -rf
 LIB			= ar -rcs
 
 LIBFT_DIR	= ./libft
@@ -12,14 +12,17 @@ INCLUDE		= -I$(LIBFT_DIR)
 SRC			= ft_convert_cdius.c ft_convert_p.c ft_convert_percent.c \
 				ft_convert_xX.c ft_init.c ft_placeholder.c ft_printf.c \
 				ft_uitoa.c
-OBJ_DIR		= ./obj
+OBJ_DIR		= ./objs
 OBJS		= $(SRC:.c=.o)
 OBJ			= $(addprefix $(OBJ_DIR)/, $(OBJS))
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
+$(NAME): $(OBJ_DIR) $(OBJ) $(LIBFT)
 	$(LIB) $(NAME) $(OBJ)
+
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
@@ -32,7 +35,7 @@ $(OBJ_DIR)/%.o: %.c
 
 clean:
 	make clean -C $(LIBFT_DIR)
-	$(RM) $(OBJ)
+	$(RM) $(OBJ_DIR)
 
 fclean:	clean
 	make fclean -C $(LIBFT_DIR)
